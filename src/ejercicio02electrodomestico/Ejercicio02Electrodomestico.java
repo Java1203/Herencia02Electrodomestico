@@ -3,11 +3,18 @@ package ejercicio02electrodomestico;
 public class Ejercicio02Electrodomestico {
 
     public static void main(String[] args) {
-        Electrodomestico lavadora1 = new Lavadora(110, "blanco", 'a', 56.5);
-        //       Electrodomestico televisor1 = new Televisor(1280.0,false,"rojo",'e',34.1);
 
+        Electrodomestico lavadora1 = new Lavadora(110, "blanco", 'a', 56.5);
+        Lavadora lavadora = (Lavadora) lavadora1;
+        lavadora.precioFinalLavadora();
         System.out.println(lavadora1.toString());
-        //       System.out.println(televisor1.toString());
+        
+        System.out.println("---------------------------------------------------");
+
+        Electrodomestico televisor1 = new Televisor(1280.0, false, "rojo", 'e', 34.1);
+        Televisor televisor = (Televisor) televisor1;
+        televisor.precioFinalTelevisor();
+        System.out.println(televisor1.toString());
     }
 
 }

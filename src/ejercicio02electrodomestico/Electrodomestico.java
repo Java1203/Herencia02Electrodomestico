@@ -111,5 +111,4 @@ public abstract class Electrodomestico {
                 + "\nPeso: " + this.peso;
     }
 
-    //   public abstract void crearElectrodomestico();
 }
