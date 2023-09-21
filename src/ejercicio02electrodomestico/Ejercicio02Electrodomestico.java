@@ -1,25 +1,59 @@
 package ejercicio02electrodomestico;
 
+import java.util.ArrayList;
+
 public class Ejercicio02Electrodomestico {
 
     public static void main(String[] args) {
 
         Electrodomestico lavadora1 = new Lavadora(110, "blanco", 'a', 56.5);
-        Lavadora lavadora = (Lavadora) lavadora1;
-        lavadora.precioFinalLavadora();
+        Lavadora lav1 = (Lavadora) lavadora1;
+        lav1.precioFinalLavadora();
         System.out.println(lavadora1.toString());
-        
+
         System.out.println("---------------------------------------------------");
 
         Electrodomestico televisor1 = new Televisor(1280.0, false, "rojo", 'e', 34.1);
-        Televisor televisor = (Televisor) televisor1;
-        televisor.precioFinalTelevisor();
+        Televisor telev1 = (Televisor) televisor1;
+        telev1.precioFinalTelevisor();
         System.out.println(televisor1.toString());
+
+        System.out.println("---------------------------------------------------");
+
+        //SOLUCIÓN EJERCICIO #3
+        Electrodomestico lavadora2 = new Lavadora(110, "verde", 'b', 48.5);
+        Lavadora lav2 = (Lavadora) lavadora2;
+        lav2.precioFinalLavadora();
+        System.out.println(lavadora2.toString());
+
+        System.out.println("---------------------------------------------------");
+
+        Electrodomestico televisor2 = new Televisor(95.0, true, "negro", 'c', 28.1);
+        Televisor telev2 = (Televisor) televisor2;
+        telev2.precioFinalTelevisor();
+        System.out.println(televisor2.toString());
+
+        System.out.println("---------------------------------------------------");
+
+        ArrayList<Electrodomestico> electrodomesticos = new ArrayList();
+        electrodomesticos.add(lavadora1);
+        electrodomesticos.add(lavadora2);
+        electrodomesticos.add(televisor1);
+        electrodomesticos.add(televisor2);
+
+        //Suma precios electrodomesticos
+        double precioTotal = 0;
+        for (Electrodomestico electrodomestico : electrodomesticos) {
+            precioTotal += electrodomestico.getPrecio();
+        }
+        System.out.println("El precio total de todos los electrodomesticos es: "+precioTotal);
     }
 
 }
 
 /*
+//////////////////////EJERCICIO#2//////////////////////
+
 Crear una superclase llamada Electrodoméstico con los siguientes atributos: precio, color,
 consumo energético (letras entre A y F) y peso.
 Los constructores que se deben implementar son los siguientes:
@@ -91,4 +125,17 @@ también deben afectar al precio.
 Finalmente, en el main debemos realizar lo siguiente:
 Vamos a crear una Lavadora y un Televisor y llamar a los métodos necesarios para mostrar
 el precio final de los dos electrodomésticos.
+
+
+//////////////////////EJERCICIO#2//////////////////////
+
+Siguiendo el ejercicio anterior, en el main vamos a crear un ArrayList de Electrodomésticos
+para guardar 4 electrodomésticos, ya sean lavadoras o televisores, con valores ya asignados.
+Luego, recorrer este array y ejecutar el método precioFinal() en cada electrodoméstico. Se
+deberá también mostrar el precio de cada tipo de objeto, es decir, el precio de todos los
+televisores y el de las lavadoras. Una vez hecho eso, también deberemos mostrar, la suma del
+precio de todos los Electrodomésticos. Por ejemplo, si tenemos una lavadora con un precio de
+2000 y un televisor de 5000, el resultado final será de 7000 (2000+5000) para
+electrodomésticos, 2000 para lavadora y 5000 para televisor.
+
  */
